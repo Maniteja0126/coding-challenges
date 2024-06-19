@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: auth_db3  # Ensure unique container name
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    volumes:
+      - auth_db3:/data/db  # Volume name
+    networks:
+      - auth_network
+
+  app:
+    build: .
+    container_name: auth_app2
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mydatabase  # MongoDB URI with database name
+    networks:
+      - auth_network
+
+networks:
+  auth_network:
+    driver: bridge
+
+volumes:
+  auth_db3:
+    driver: local
