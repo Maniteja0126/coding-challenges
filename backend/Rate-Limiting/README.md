@@ -34,8 +34,11 @@ This repository contains two folders: `attack` and `rate-limiter`.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/rate-limiting-example.git
-    cd rate-limiting-example
+    git clone https://github.com/Maniteja0126/coding-challenges.git
+
+    cd backend
+    
+    cd rate-limiting
     ```
 
 2. Install the dependencies for both the `attack` and `rate-limiter` folders:
