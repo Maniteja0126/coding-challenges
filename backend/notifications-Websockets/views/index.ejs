@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time Notification</title>
+  </head>
+  <body>
+    <h1>Notifications</h1>
+    <ul id="notifications"></ul>
+
+    <script>
+      const ws = new WebSocket("ws://localhost:3000");
+
+      ws.onmessage = (event) => {
+        const notifications = document.getElementById("notifications");
+        const newNotification = document.createElement("li");
+        newNotification.textContent = event.data;
+        notifications.appendChild(newNotification);
+      };
+
+      ws.onopen = () => {
+        console.log("connected to the sever");
+      };
+
+      ws.onclose = () => {
+        console.log("Disconnected from the server");
+      };
+    </script>
+  </body>
+</html>
