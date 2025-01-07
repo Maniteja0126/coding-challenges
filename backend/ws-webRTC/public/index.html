@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC with WebSocket</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+
+      video {
+        width: 50%;
+        margin: 10px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WebRTC with WebSocket</h1>
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+    <script src="script.js"></script>
+  </body>
+</html>
